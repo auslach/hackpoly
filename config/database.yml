@@ -17,13 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  pool: 5
+  username: hackpoly
+  password: password
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
 
 development:
   <<: *default
-  database: hackpoly_development
+  host: localhost
+  database: hackpoly_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,6 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: localhost
   database: hackpoly_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -76,10 +80,10 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: hackpoly_production
-  username: hackpoly
-  password: <%= ENV['HACKPOLY_DATABASE_PASSWORD'] %>
+##     url: <%= ENV['DATABASE_URL'] %>
+##
+#production:
+  #<<: *default
+  #database: hackpoly_production
+  #username: hackpoly
+  #password: <%= ENV['HACKPOLY_DATABASE_PASSWORD'] %>
