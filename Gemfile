@@ -8,6 +8,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails'
 
+gem 'devise'
+
 gem 'foreman'
 group :development do
   gem 'thin'
