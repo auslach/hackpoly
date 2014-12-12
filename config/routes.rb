@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#index'
 
-  get 'profile' => 'users/users#profile', as: :user_profile
-  put 'profile' => 'users/users#update', as: :update_user_profile
+  get 'profile' => 'users#profile', as: :user_profile
+  put 'profile' => 'users#update', as: :update_user_profile
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

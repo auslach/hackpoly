@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
 
   has_one :user_info
 
+
+  def self.year_in_school_choices
+    ["Freshman", "Sophomore", "Junior", "Senior"]
+  end
+
+  def self.skillset_choices
+    ["Hacker", "Designer", "Marketer", "I'm just awesome"]
+  end
+
 end
