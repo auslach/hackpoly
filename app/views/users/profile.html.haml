@@ -7,11 +7,12 @@ this is your profile page
   = f.input :major, as: :string, label: "Major:"
 
   = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Year:"
-  = f.input :skillset, as: :select, collection: User.skillset_choices, label: "What would you consider yourself?"
-
+  = f.input :skillset, as: :select, collection: User.skillset_choices, label: "What would you consider yourself as?"
   = f.input :website_url, as: :string, label: "Portfolio:"
   = f.input :github_url, as: :string, label: "Github:"
   = f.input :linkedin_url, as: :string, label: "LinkedIn:"
+
+  = f.input :previous_hackathons, label: "What previous hackathons have you been to?"
 
   = f.input :coolest_built, label: "Describe the coolest thing you've ever built or created. (Does not have to relate to hackathons, software, design, etc!)"
 
