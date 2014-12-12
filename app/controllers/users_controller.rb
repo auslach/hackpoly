@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def application
+    @user = current_user
+  end
+
   def profile
     @user_info = current_user.user_info
   end
