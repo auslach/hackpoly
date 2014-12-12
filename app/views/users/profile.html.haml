@@ -1,7 +1,7 @@
 this is your profile page
 = current_user.email
 
-= simple_form_for(@user_info, url: update_user_profile_path) do |f|
+= simple_form_for(@user_info, url: update_user_profile_path, method: :put) do |f|
   = f.input :first_name, as: :string, label: "First name:"
   = f.input :last_name, as: :string, label: "Last name:"
   = f.input :major, as: :string, label: "Major:"
@@ -14,3 +14,5 @@ this is your profile page
   = f.input :linkedin_url, as: :string, label: "LinkedIn:"
 
   = f.input :coolest_built, label: "Describe the coolest thing you've ever built or created. (Does not have to relate to hackathons, software, design, etc!)"
+
+  = f.button :submit, "Update"
