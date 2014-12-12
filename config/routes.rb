@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # devise/sessions
     get 'login' => 'devise/sessions#new', as: :new_user_session
     post 'login' => 'devise/sessions#create', as: :user_session
-    delete 'logout' => 'devise/sessions#delete', as: :destroy_user_session
+    delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
 
     # devise/passwords
   end

@@ -8,6 +8,13 @@
   %body
     = render partial: 'layouts/flash_messages'
     = link_to 'home', root_path
-    = link_to 'application', user_application_path
+    |
+    - if user_signed_in?
+      = link_to 'application', user_application_path
+      = link_to 'logout', destroy_user_session_path, method: :delete
+    - else
+      = link_to 'login', new_user_session_path
+      = link_to 'register', new_user_registration_path
+
     %br/
     = yield

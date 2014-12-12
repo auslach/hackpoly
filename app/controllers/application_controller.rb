@@ -5,11 +5,17 @@ class ApplicationController < ActionController::Base
 
   # Devise
   def after_sign_in_path_for(resource)
-    # go to profile after signing in
+    # go to profile after signing in if it is first time logging in
+    if current_user.sign_in_count == 1
+      user_profile_path
+    else
+      user_application_path
+    end
   end
 
   def after_update_path_for(resource)
-    # path to go to after updating profile
+    # go to the application page after update
+    user_application_path
   end
 
 end
