@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 private
 
 def init
-  UserInfo.create(current_user)
+  UserInfo.create(user: self)
 end
 
 end
