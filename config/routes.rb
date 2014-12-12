@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     # devise/registrations
     get 'register' => 'devise/registrations#new', as: :new_user_registration
-    post 'register' => 'devise/registration#create', as: :user_registration
-    get 'users/profile' => 'devise/registration#edit', as: :edit_user_registration
+    post 'register' => 'devise/registrations#create', as: :user_registration
+    get 'account' => 'devise/registrations#edit', as: :edit_user_registration
 
     # devise/sessions
     get 'login' => 'devise/sessions#new', as: :new_user_session
@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
+
+  get 'profile' => 'users/users#profile', as: :user_profile
+  put 'profile' => 'users/users#update', as: :update_user_profile
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
