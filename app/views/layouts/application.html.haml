@@ -7,4 +7,7 @@
     = csrf_meta_tags
   %body
     = render partial: 'layouts/flash_messages'
+    = link_to 'home', root_path
+    = link_to 'application', user_application_path
+    %br/
     = yield

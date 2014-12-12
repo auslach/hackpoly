@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'register' => 'devise/registrations#new', as: :new_user_registration
     post 'register' => 'devise/registrations#create', as: :user_registration
     get 'account' => 'devise/registrations#edit', as: :edit_user_registration
+    put 'register' => 'devise/registrations#update'
 
     # devise/sessions
     get 'login' => 'devise/sessions#new', as: :new_user_session
