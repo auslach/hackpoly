@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 private
 
 def init
-  UserInfo.create(user: self)
+  self.user_info || UserInfo.create(user: self)
 end
 
 end
