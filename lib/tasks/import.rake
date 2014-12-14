@@ -2,6 +2,7 @@ require 'csv'
 
 desc "Import list of universities from universities.csv file"
 task :import_universities => :environment do
+
   file = "db/universities.csv"
 
   # clear the universities table
@@ -10,7 +11,7 @@ task :import_universities => :environment do
   puts "Importing from '#{file}'.."
   count = 0
   CSV.foreach(file, :headers => true) do |record|
-    University.create(:name => record[1])
+    University.create(name: record[1], url: record[15])
     count += 1
   end
 
