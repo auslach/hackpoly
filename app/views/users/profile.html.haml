@@ -4,13 +4,13 @@ this is your profile page
 = simple_form_for(@user_info, url: update_user_profile_path, method: :put) do |f|
   = f.input :first_name, as: :string, label: "First name:"
   = f.input :last_name, as: :string, label: "Last name:"
-  = f.input :major, as: :string, label: "Major:"
+  = f.input :major, as: :string, label: "Major:", placeholder: "Computer Science, Graphic Design, Marketing, etc"
 
-  = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Year:"
+  = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Year in school:"
   = f.input :skillset, as: :select, collection: User.skillset_choices, label: "What would you consider yourself as?"
-  = f.input :website_url, as: :string, label: "Portfolio:"
-  = f.input :github_url, as: :string, label: "Github:"
-  = f.input :linkedin_url, as: :string, label: "LinkedIn:"
+  = f.input :website_url, as: :string, label: "Portfolio:", placeholder: "www.myportfolio.com"
+  = f.input :github_url, as: :string, label: "Github:", placeholder: "github.com/username"
+  = f.input :linkedin_url, as: :string, label: "LinkedIn:", placeholder: "www.linkedin.com/in/username"
 
   = f.input :previous_hackathons, label: "What previous hackathons have you been to?"
 
