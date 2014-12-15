@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user_info = current_user.user_info
+    @user = current_user
+    @user_info = @user.user_info
+    @majors = Major.pluck(:name)
   end
 
   def update

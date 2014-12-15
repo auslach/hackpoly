@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   has_one :user_info
 
+  def major
+    self.user_info.major
+  end
+
   def self.year_in_school_choices
     ["Freshman", "Sophomore", "Junior", "Senior"]
   end

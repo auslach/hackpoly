@@ -4,7 +4,7 @@ this is your profile page
 = simple_form_for(@user_info, url: update_user_profile_path, method: :put) do |f|
   = f.input :first_name, as: :string, label: "First name:"
   = f.input :last_name, as: :string, label: "Last name:"
-  = f.input :major, as: :string, label: "Major:", placeholder: "Computer Science, Graphic Design, Marketing, etc"
+  = f.input :major, collection: @majors, label: "Major:", placeholder: "Computer Science, Graphic Design, Marketing, etc", input_html: { rel: 'autocomplete', data_default: @user.major }
 
   = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Year in school:"
   = f.input :skillset, as: :select, collection: User.skillset_choices, label: "What would you consider yourself as?"
