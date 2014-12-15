@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
 
   has_one :user_info
 
+  def greeting
+    first_name = self.user_info.first_name
+    first_name.blank? ? self.email : first_name
+  end
+
   def major
     self.user_info.major
   end
