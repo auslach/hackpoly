@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 private
 
 def user_info_params
-  params.require(:user_info).permit(:first_name, :last_name, :major, :year_in_school, :skillset, :website_url, :github_url, :linkedin_url, :coolest_built)
+  params.require(:user_info).permit(:first_name, :last_name, :major, :year_in_school, :skillset, :website_url, :github_url, :linkedin_url, :previous_hackathons, :coolest_built)
 end
 
 end
