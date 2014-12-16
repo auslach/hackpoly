@@ -6,15 +6,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = render partial: 'layouts/flash_messages'
-    = link_to 'home', root_path
-    |
-    - if user_signed_in?
-      = link_to 'application', user_application_path
-      = link_to 'logout', destroy_user_session_path, method: :delete
-    - else
-      = link_to 'login', new_user_session_path
-      = link_to 'register', new_user_registration_path
+    .container
+      = render partial: 'layouts/flash_messages'
+      = link_to 'home', root_path
+      |
+      - if user_signed_in?
+        = link_to 'application', user_application_path
+        = link_to 'logout', destroy_user_session_path, method: :delete
+      - else
+        = link_to 'login', new_user_session_path
+        = link_to 'register', new_user_registration_path
 
-    %br/
-    = yield
+      %br/
+      = yield
