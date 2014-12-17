@@ -1,3 +1,7 @@
+// Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 // Custom Colors
 $hp-blue: #1476B9;
 
@@ -7,7 +11,3 @@ $brand-primary: $hp-blue;
 // Buttons
 $btn-default-color: #fff;
 $btn-default-bg: $hp-blue;
-
-// Bootstrap
-@import "bootstrap-sprockets";
-@import "bootstrap";

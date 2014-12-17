@@ -1,5 +1,13 @@
-input:focus, select, textarea {
+.form-control {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+textarea {
+  resize: none;
 }
