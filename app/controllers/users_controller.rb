@@ -12,9 +12,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
+    @user_info = @user.user_info
+    @majors = Major.pluck(:name)
     if current_user.user_info.update(user_info_params)
       flash[:success] = "Your profile has been updated!"
       redirect_to update_user_profile_path
+    else
+      render 'profile'
     end
   end
 
