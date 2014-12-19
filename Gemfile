@@ -13,6 +13,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'simple_form'
 
+gem 'mailchimp-api'
+
 gem 'foreman'
 group :development do
   gem 'thin'
