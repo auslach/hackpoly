@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :setup_mcapi
+
+  def setup_mcapi
+    @mailchimp = Mailchimp::API.new(ENV['MAILCHIMP_API_KEY'])
+  end
+
   # Devise
   def after_sign_in_path_for(resource)
     # go to profile after signing in if it is first time logging in

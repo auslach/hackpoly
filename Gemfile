@@ -13,7 +13,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'simple_form'
 
-gem 'mailchimp-api'
+gem 'mailchimp-api', require: 'mailchimp'
 
 gem 'foreman'
 group :development do

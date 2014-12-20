@@ -1,0 +1,23 @@
+%table.table.table-striped.table-bordered
+  %th
+    Last Name
+  %th
+    First Name
+  %th
+    Email
+  %th
+    List
+  %th
+    Status
+  - @emails.each do |e|
+    %tr
+      %td
+        = e['merges']['LNAME']
+      %td
+        = e['merges']['FNAME']
+      %td
+        = e['merges']['EMAIL']
+      %td
+        = e['list_name']
+      %td
+        = e['status']

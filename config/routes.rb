@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get 'profile' => 'users#profile', as: :user_profile
   put 'profile' => 'users#update', as: :update_user_profile
 
+
+  get 'users' => 'users#index', as: :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
