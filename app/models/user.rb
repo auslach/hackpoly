@@ -8,6 +8,13 @@ class User < ActiveRecord::Base
 
   has_one :user_info
 
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :email,   presence: true,
+                      length: { maximum: 50 },
+                      format: { with: EMAIL_REGEX },
+                      uniqueness: { case_sensitive: false }
+
   def greeting
     first_name = self.user_info.first_name
     first_name.blank? ? self.email : first_name
