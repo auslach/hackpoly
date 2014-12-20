@@ -37,6 +37,7 @@ private
 def init
   self.user_info || UserInfo.create(user: self)
   self.admin = false
+  self.admitted = false
   self.save
 end
 
