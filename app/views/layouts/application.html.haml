@@ -11,6 +11,8 @@
       = link_to 'home', root_path
       |
       - if user_signed_in?
+        - if current_user.admin?
+          = link_to 'users', users_path
         = link_to 'application', user_application_path
         = link_to 'logout', destroy_user_session_path, method: :delete
       - else
