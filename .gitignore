@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-env.sh
+config/local_env.yml
