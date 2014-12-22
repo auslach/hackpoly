@@ -14,6 +14,7 @@ gem 'devise'
 gem 'simple_form'
 
 gem 'mailchimp-api', require: 'mailchimp'
+gem 'mandrill-api'
 
 gem 'foreman'
 group :development do
