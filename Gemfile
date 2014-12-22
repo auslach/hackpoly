@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 
 gem 'devise'
 gem 'simple_form'
+gem 'byebug'
 
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'mandrill-api'
