@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user_info = @user.user_info
     @majors = Major.pluck(:name)
+    @universities = University.pluck(:name)
   end
 
   def update
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
 private
 
 def user_info_params
-  params.require(:user_info).permit(:first_name, :last_name, :major, :year_in_school, :skillset, :website_url, :github_url, :linkedin_url, :previous_hackathons, :coolest_built)
+  params.require(:user_info).permit(:first_name, :last_name, :major, :year_in_school, :skillset, :website_url, :github_url, :linkedin_url, :previous_hackathons, :coolest_built, :university)
 end
 
 def authorize_admin

@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     self.user_info.major
   end
 
+  def university
+    self.user_info.university
+  end
+
   def self.year_in_school_choices
     ["Freshman", "Sophomore", "Junior", "Senior"]
   end
@@ -31,9 +35,18 @@ class User < ActiveRecord::Base
     ["Hacker", "Designer", "Marketer", "I'm just awesome"]
   end
 
+  def find_university
+    # grab domain from email address
+    school_url = self.email.split("@")[1]
+    # grab first result
+    university = University.where("url LIKE ?", "%#{school_url}%")[0]
+    return university.name
+  end
+
   # override devise after_confirmation
   def after_confirmation
-    self.user_info || UserInfo.create(user: self)
+    # initialize user_info, prefill university field from email
+    self.user_info || UserInfo.create(user: self, university: self.find_university)
     self.admin = false
     self.admitted = false
     self.save
