@@ -15,7 +15,6 @@ gem 'simple_form'
 gem 'byebug'
 
 gem 'mailchimp-api', require: 'mailchimp'
-gem 'mandrill-api'
 
 gem 'foreman'
 group :development do
