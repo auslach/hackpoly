@@ -11,6 +11,7 @@ $(document).on "ready page:load", ->
         input.attr('class', $(this).attr('class') )
         input.attr('data-provide', 'typeahead' )
         input.val($(this).attr('data_default'))
+        input.attr('placeholder', $(this).attr('data_placeholder'))
         $(this).replaceWith(input)
 
         $(input).typeahead({
