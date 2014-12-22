@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @emails = @mailchimp.lists.members(ENV['MAILCHIMP_LIST_ID'])['data']
+    @emails = MAILCHIMP.lists.members(ENV['MAILCHIMP_LIST_ID'])['data']
   end
 
 private
