@@ -1,4 +1,9 @@
-= "Welcome, #{@user.greeting}!"
+= "Hello, #{@user.greeting}!"
+%br/
+- if current_user.admitted?
+  = "Congratulations! Your application has been accepted for Hackpoly 2015. Please check your email regularly for further instructions."
+- else
+  = "Your application is currently pending. Please check back regularly for any updates to your application status."
 %br/
 = link_to 'edit profile', user_profile_path
 = link_to 'change password', edit_user_registration_path
