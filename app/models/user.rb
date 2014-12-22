@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def self.year_in_school_choices
-    ["Freshman", "Sophomore", "Junior", "Senior"]
+    ["Freshman", "Sophomore", "Junior", "Senior", "Graduate Student"]
   end
 
   def self.skillset_choices
