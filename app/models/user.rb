@@ -2,9 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  after_create :init
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable
 
   has_one :user_info
 
@@ -32,13 +31,12 @@ class User < ActiveRecord::Base
     ["Hacker", "Designer", "Marketer", "I'm just awesome"]
   end
 
-private
-
-def init
-  self.user_info || UserInfo.create(user: self)
-  self.admin = false
-  self.admitted = false
-  self.save
-end
+  # override devise after_confirmation
+  def after_confirmation
+    self.user_info || UserInfo.create(user: self)
+    self.admin = false
+    self.admitted = false
+    self.save
+  end
 
 end
