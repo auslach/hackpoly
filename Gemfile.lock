@@ -48,6 +48,11 @@ GEM
     columnize (0.9.0)
     daemons (1.1.9)
     debugger-linecache (1.2.0)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -55,6 +60,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-async (0.9.0)
+      devise (~> 3.2)
     dotenv (1.0.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -181,7 +188,9 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.0.0)
+  delayed_job_active_record
   devise
+  devise-async
   foreman
   haml-rails
   jbuilder (~> 2.0)

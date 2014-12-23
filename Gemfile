@@ -11,7 +11,10 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'devise'
+gem 'devise-async'
 gem 'simple_form'
+gem 'delayed_job_active_record'
+
 gem 'byebug'
 
 gem 'mailchimp-api', require: 'mailchimp'
