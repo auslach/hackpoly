@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+  after_create :mailchimp_subscribe
+
   has_one :user_info
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -41,6 +43,11 @@ class User < ActiveRecord::Base
     # grab first result
     university = University.where("url LIKE ?", "%#{school_url}%")[0]
     return university.name
+  end
+
+  def mailchimp_subscribe
+    # subscribe them to the new "registered" Hackpoly 2015 mailchimp list
+    list_id = ENV['MAILCHIMP_LIST_ID']
   end
 
   # override devise after_confirmation
