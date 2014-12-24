@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-  after_create :mailchimp_subscribe
+  after_create :init, :mailchimp_subscribe
 
   has_one :user_info
 
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     school_url = self.email.split("@")[1]
     # grab first result
     university = University.where("url LIKE ?", "%#{school_url}%")[0]
-    return university.name
+    return university.try(:name)
   end
 
   def mailchimp_subscribe
@@ -50,13 +50,10 @@ class User < ActiveRecord::Base
     list_id = ENV['MAILCHIMP_LIST_ID']
   end
 
-  # override devise after_confirmation
-  def after_confirmation
+  def init
     # initialize user_info, prefill university field from email
-    self.user_info || UserInfo.create(user: self, university: self.find_university)
-    self.admin = false
-    self.admitted = false
-    self.save
+    UserInfo.create(user: self, university: self.find_university) if self.user_info.nil?
   end
+
 
 end
