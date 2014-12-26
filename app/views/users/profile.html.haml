@@ -1,16 +1,53 @@
-= simple_form_for(@user_info, url: update_user_profile_path, method: :put) do |f|
-  = f.input :first_name, as: :string, label: "First name:"
-  = f.input :last_name, as: :string, label: "Last name:"
-  = f.input :university, collection: @universities, label: "University/ School:", placeholder: "University of [School Name]", input_html: { rel: 'autocomplete', data_default: @user.university, data_placeholder: "University of <School Name>" }
-  = f.input :major, collection: @majors, label: "Major:", input_html: { rel: 'autocomplete', data_default: @user.major, data_placeholder: "Computer Science, Graphic Design, Marketing, etc" }
-  = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Grade level:", prompt: "-"
-  = f.input :skillset, as: :select, collection: User.skillset_choices, label: "What would you consider yourself as?", prompt: "-"
-  = f.input :website_url, as: :string, label: "Portfolio:", placeholder: "www.myportfolio.com"
-  = f.input :github_url, as: :string, label: "Github:", placeholder: "github.com/username"
-  = f.input :linkedin_url, as: :string, label: "LinkedIn:", placeholder: "www.linkedin.com/in/username"
+.profile-page
+  .row
+    .page-heading.col-md-12.text-center
+      %h2= "#{@user.greeting}'s Profile"
+  = simple_form_for(@user_info, url: update_user_profile_path, method: :put) do |f|
+    .row
+      .col-sm-4.col-sm-offset-2
+        = f.input :first_name, as: :string, label: "First name:"
+      .col-sm-4
+        = f.input :last_name, as: :string, label: "Last name:"
+    .row
+      .col-sm-8.col-sm-offset-2
+        = f.input :university, collection: @universities, label: "University/ School:", placeholder: "University of [School Name]", input_html: { rel: 'autocomplete', data_default: @user.university, data_placeholder: "University of <School Name>" }
+    .row
+      .col-sm-8.col-sm-offset-2
+        = f.input :major, collection: @majors, label: "Major:", input_html: { rel: 'autocomplete', data_default: @user.major, data_placeholder: "Computer Science, Graphic Design, Marketing, etc" }
+    .row.select-grade-skill
+      .col-sm-4.col-sm-offset-2
+        = f.input :year_in_school, as: :select, collection: User.year_in_school_choices, label: "Grade level:", prompt: "-"
+      .col-sm-4
+        = f.input :skillset, as: :select, collection: User.skillset_choices, label: "Which one are you?", prompt: "-"
+    .row
+      .col-sm-2.col-sm-offset-2.responsive-align
+        = f.label :website_url, "Portfolio:"
+      .col-sm-6
+        = f.input :website_url, as: :string, placeholder: "www.my-portfolio.com", label: false
+    .row
+      .col-sm-2.col-sm-offset-2.responsive-align
+        = f.label :github_url, "Github:"
+      .col-sm-6
+        = f.input :github_url, as: :string, placeholder: "github.com/username", label: false
+    .row
+      .col-sm-2.col-sm-offset-2.responsive-align
+        = f.label :linkedin_url, "LinkedIn:"
+      .col-sm-6
+        = f.input :linkedin_url, as: :string, placeholder: "www.linkedin.com/in/username", label: false
 
-  = f.input :previous_hackathons, label: "What previous hackathons have you been to?"
-
-  = f.input :coolest_built, label: "Describe the coolest thing you've ever built or achieved. (Does not have to be related to hackathons, software, design, etc!)"
-
-  = f.button :submit, "Update"
+    -#.row
+      -#.col-sm-4
+        -#= f.input :website_url, as: :string, label: "Portfolio:", placeholder: "www.myportfolio.com"
+      -#.col-sm-4
+        -#= f.input :github_url, as: :string, label: "Github:", placeholder: "github.com/username"
+      -#.col-sm-4
+        -#= f.input :linkedin_url, as: :string, label: "LinkedIn:", placeholder: "www.linkedin.com/in/username"
+    .row
+      .col-sm-8.col-sm-offset-2
+        = f.input :previous_hackathons, label: "What previous hackathons have you been to?", placeholder: "Name of hackathons"
+    .row
+      .col-sm-8.col-sm-offset-2
+        = f.input :coolest_built, label: "Describe the coolest thing you've ever built or achieved. (Does not have to be related to hackathons, software, design, etc!)", placeholder: "<Type coolness here>"
+    .row
+      .col-sm-12.text-center
+        = f.button :submit, "Update my profile"

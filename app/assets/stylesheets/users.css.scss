@@ -1,3 +1,55 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page-heading {
+  margin-bottom: 15px;
+}
+input[type="submit"] {
+  margin-top: 15px;
+}
+.application-page {
+  .row {
+    padding: 15px;
+  }
+  li {
+    padding: 10px;
+  }
+  .greeting {
+
+  }
+  .app-status {
+    h4 {
+      line-height: 1.5;
+    }
+    .user-status {
+      text-decoration: underline;
+    }
+  }
+}
+.profile-page {
+  div {
+    /*padding-top: 5px;*/
+    /*padding-bottom: 5px;*/
+  }
+  label {
+    font-size: 120%;
+    padding-top: 5px;
+  }
+  textarea {
+    height: 75px;
+  }
+  .select-grade-skill {
+    margin-bottom: 10px;
+  }
+  .responsive-align {
+    @media (max-width: $screen-xs-max) {
+      text-align: left;
+    }
+    @media (min-width: $screen-xs-max) {
+      text-align: right;
+    }
+  }
+}
+.account-page {
+}

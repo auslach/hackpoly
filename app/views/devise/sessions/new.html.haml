@@ -1,12 +1,15 @@
-%h2 Login
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.input :email, autofocus: true, label: "Email Address", placeholder: "yourname@yourschool.edu"
-  .field
-    = f.input :password, as: :password, label: "Password"
-  -#- if devise_mapping.rememberable?
-    -#.field
-      -#= f.check_box :remember_me
-      -#= f.label :remember_me
-  .actions
-    = f.button :submit, "Login"
+.login-page
+  .row
+    .page-heading.col-sm-12.text-center
+      %h2 Login
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .row
+      .col-sm-6.col-sm-offset-3
+        = f.input :email, autofocus: true, label: "Email Address", placeholder: "yourname@yourschool.edu"
+    .row
+      .col-sm-6.col-sm-offset-3
+        = f.input :password, as: :password, label: "Password"
+    .row
+      .col-sm-12.text-center
+        .actions
+          = f.button :submit, "Login"

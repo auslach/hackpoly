@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     first_name.blank? ? self.email : first_name
   end
 
+  def status
+    self.admitted? ? "accepted" : "pending"
+  end
+
   def major
     self.user_info.major
   end

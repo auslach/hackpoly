@@ -1,11 +1,19 @@
-%h2 Register for HackPoly
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.input :email, autofocus: true, label: "Email Address", placeholder: "yourname@yourschool.edu"
-  .field
-    = f.input :password, as: :password, label: "Password"
-  .field
-    = f.input :password_confirmation, as: :password, label: "Confirm Password"
-  .actions
-    = f.button :submit, "Register"
+.register-page
+  .row
+    .page-heading.col-sm-12.text-center
+      %h2 Register for HackPoly
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    -#= devise_error_messages!
+    .row
+      .col-sm-6.col-sm-offset-3
+        = f.input :email, autofocus: true, label: "Email Address", placeholder: "yourname@yourschool.edu"
+    .row
+      .col-sm-6.col-sm-offset-3
+        = f.input :password, as: :password, label: "Password"
+    .row
+      .col-sm-6.col-sm-offset-3
+        = f.input :password_confirmation, as: :password, label: "Confirm Password"
+    .row
+      .col-sm-12.text-center
+        .actions
+          = f.button :submit, "Register"
