@@ -3,7 +3,6 @@
     .page-heading.col-sm-12.text-center
       %h2 Apply for HackPoly 2015
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    -#= devise_error_messages!
     .row
       .col-sm-6.col-sm-offset-3
         = f.input :email, autofocus: true, label: "Email Address", placeholder: "yourname@yourschool.edu"
