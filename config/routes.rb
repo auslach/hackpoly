@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [:registrations, :sessions]
-  devise_scope :user do
-    # devise/registrations
-    get 'apply' => 'devise/registrations#new', as: :new_user_registration
-    post 'apply' => 'devise/registrations#create', as: :user_registration
-    get 'account' => 'devise/registrations#edit', as: :edit_user_registration
-    put 'apply' => 'devise/registrations#update'
-
-    # devise/sessions
-    get 'login' => 'devise/sessions#new', as: :new_user_session
-    post 'login' => 'devise/sessions#create', as: :user_session
-    delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
-
-    # devise/passwords
-  end
+  devise_for :users,
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    },
+    path: '',
+    path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      sign_up: 'apply',
+      edit: 'account',
+      password: 'forgot'
+    }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

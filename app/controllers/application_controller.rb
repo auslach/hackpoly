@@ -13,9 +13,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_update_path_for(resource)
-    # go to the application page after update
-    user_application_path
-  end
-
 end
