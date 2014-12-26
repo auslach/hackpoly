@@ -19,23 +19,6 @@
         = f.input :year_in_school, as: :select, collection: UserInfo.year_in_school_choices, label: "Grade level:", prompt: "-"
       .col-sm-4
         = f.input :skillset, as: :select, collection: UserInfo.skillset_choices, label: "Which one are you?", prompt: "-"
-    -#.row.stats-bro
-      -#.col-sm-6
-        -#.col-sm-6.col-sm-offset-1.responsive-align.gender-radio
-          -#= f.label :gender, "Gender:"
-        -#.col-sm-5
-          -#= f.input :gender, as: :radio_buttons, collection: UserInfo.gender_choices, prompt: "-", label: false
-      -#.col-sm-6
-        -#.row
-          -#.col-sm-3.col-xs-2.responsive-align
-            -#= f.label :age, "Age:"
-          -#.col-sm-5.col-xs-4
-            -#= f.input :age, as: :integer, placeholder: "#", label: false
-        -#.row
-          -#.col-sm-3.responsive-align
-            -#= f.label :ethnicity, "Ethnicity:"
-          -#.col-sm-5
-            -#= f.input :ethnicity, as: :select, collection: UserInfo.ethnicity_choices, prompt: "-", label: false
     .row
       .col-sm-2.col-sm-offset-2.responsive-align.gender-radio
         = f.label :gender, "Gender:"
