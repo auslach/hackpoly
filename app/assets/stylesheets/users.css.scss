@@ -42,6 +42,11 @@ input[type="submit"] {
   .select-grade-skill {
     margin-bottom: 10px;
   }
+  .gender-radio {
+    label {
+      margin-top: 5px;
+    }
+  }
   .responsive-align {
     @media (max-width: $screen-xs-max) {
       text-align: left;
@@ -52,4 +57,9 @@ input[type="submit"] {
   }
 }
 .account-page {
+}
+.stats-bro {
+  div {
+    /*border: 1px solid green;*/
+  }
 }

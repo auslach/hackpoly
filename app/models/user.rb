@@ -33,14 +33,6 @@ class User < ActiveRecord::Base
     self.user_info.university
   end
 
-  def self.year_in_school_choices
-    ["Freshman", "Sophomore", "Junior", "Senior", "Graduate Student"]
-  end
-
-  def self.skillset_choices
-    ["Hacker", "Designer", "Marketer", "I'm just awesome"]
-  end
-
   def find_university
     # grab domain from email address
     school_url = self.email.split("@")[1]
