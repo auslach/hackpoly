@@ -228,7 +228,7 @@ body{
 }
 
 .subtle{
-	background-image:url("grey_@2X.png");
+	background-image: image-url("grey_@2X.png");
 	background-repeat: repeat;
 	height:100%;
 	margin-top: 0px;
@@ -346,7 +346,7 @@ body{
 	content: ' ';
 	width:100%;
 	height:100%;
-	background-image: url('cp_night_gray.png');
+	background-image: image-url('cp_night_gray.png');
 	background-position: center 0px;
 	background-attachment: fixed;
 	background-size: cover;
