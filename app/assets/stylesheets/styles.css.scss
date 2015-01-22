@@ -112,7 +112,7 @@ body{
 #top-image {
 	overflow: auto;
 	display:block;
-	background-image: url("cp_night_gray.png");
+	background-image: image-url("cp_night_gray.png");
 	background-size: cover;
 }
 
@@ -257,7 +257,7 @@ body{
 } 
 
 .title-line span { 
-	background-image: url("grey_@2X.png");
+	background-image: image-url("grey_@2X.png");
 	background-repeat: repeat; 
 	background-position:center center;
 	padding:0 10px; 
@@ -272,7 +272,7 @@ body{
 } 
 
 .left-title-line span { 
-	background-image: url("grey_@2X.png");
+	background-image: image-url("grey_@2X.png");
 	background-repeat: repeat; 
 	background-position:center center;
 	padding:0 10px; 
