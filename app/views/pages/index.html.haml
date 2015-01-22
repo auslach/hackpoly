@@ -15,7 +15,6 @@
           %i.share-link.fa.fa-github-square
           %span.share-text Source Code
       %li
-        -#%button.btn.btn-primary.sidebar-button Apply
         - if user_signed_in?
           = link_to "Application", user_application_path, class: "btn btn-primary sidebar-button"
         - else
@@ -37,16 +36,13 @@
               %i.fa.fa-bars
           .col-xs-8.col-sm-8.text-center
             .navbar-logo
-              -#%img#hpoly-logo-white{:alt => "cal poly pomona hackathon logo", :src => "res/hackpoly-white.png"}/
               = image_tag "hackpoly-white.png", alt: "cal poly pomona hackathon logo", id: "hpoly-logo-white"
       .hero-line
         %h1
           Hack the Future
           %span.hidden-xs in SoCal
         .action
-          / <button type="button" id="sponsor-button" class="btn btn-success btn-lg"> Sponsor </button>
           #application-form
-          -#%button#apply-button.btn.btn-primary.btn-lg{:type => "button"} Apply
           = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary"
     .subtle
       .container
@@ -163,19 +159,6 @@
         #sponsors.module
           %h2.title-line
             %span Sponsors
-          -#.block.platinum
-          -#.block.gold
-          -#.block.silver
-            -#%a{:href => "http://mlh.io"}
-              -#%img#mlh.grayscale{:alt => "Major League Hacking sponsors Hackpoly 2015", :src => "res/sponsors/mlh.png", :title => "Hackpoly part of the MLH.io Spring 2015 lineup"}/
-            -#%a{:href => "http://generalassemb.ly"}
-              -#%img#generalassembly.grayscale{:alt => "Hackpoly sponsored by General Assembly", :src => "res/sponsors/ga.png", :title => "Hackpoly sponsored by General Assembly"}/
-          -#.block.bronze
-            -#%a{:href => "http://food2fork.com"}
-              -#%img#food2fork.grayscale{:alt => "Food2Fork sponsors Hackpoly", :src => "res/sponsors/food2fork.png", :title => "Food2Fork sponsors Hackpoly"}/
-            -#%a{:href => "http://jetbrains.com"}
-              -#%img#jetbrains.grayscale{:alt => "Jetbrains Sponsors Hackpoly", :src => "res/sponsors/jetbrains.png", :title => "Jetbrains Sponsors Hackpoly"}/
-
           .block.platinum
           .block.gold
           .block.silver

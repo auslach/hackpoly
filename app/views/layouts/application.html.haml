@@ -39,29 +39,13 @@
               %i.fa.fa-bars
           .col-xs-8.col-sm-8.text-center
             .navbar-logo
-              -#%img#hpoly-logo{:alt => "cal poly pomona hackathon logo", :src => "res/hackpoly.png"}/
               = link_to root_path do
                 = image_tag 'hackpoly.png', alt: "cal poly pomona hackathon logo", id: "hpoly-logo"
           .hidden-xs.col-sm-2.text-right.navmodule
-            -#%button.btn.btn-primary
             - if user_signed_in?
               = link_to "Application", user_application_path, class: "btn btn-primary"
             - else
               = link_to "Apply", new_user_registration_path, class: "btn btn-primary"
-
-    -#.container.header
-      -#= link_to 'home', root_path
-      -#|
-      -#- if user_signed_in?
-        -#- if current_user.admin?
-          -#= link_to 'users', users_path
-        -#= link_to 'application', user_application_path
-        -#= link_to 'logout', destroy_user_session_path, method: :delete
-      -#- else
-        -#= link_to 'login', new_user_session_path
-        -#= link_to 'apply', new_user_registration_path
-
-    / All Main Content Here
 
     .app-container
       .container-bg.subtle
