@@ -1,4 +1,5 @@
-.register-page
+= render partial: "shared/page_nav"
+.register-page.container
   .row
     .page-heading.col-sm-12.text-center
       %h2 Apply for HackPoly 2015
@@ -14,8 +15,7 @@
         = f.input :password_confirmation, as: :password, label: "Confirm Password"
     .row
       .col-sm-12.text-center
-        .actions
-          = f.button :submit, "Apply"
+        = f.button :submit, "Apply", class: "btn btn-primary"
     %br/
     .row
       .col-sm-12.text-center

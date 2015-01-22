@@ -1,0 +1,24 @@
+%nav.navbar.navbar-default.no-margin{:role => "navigation"}
+  .container
+    .row
+      .col-xs-3.text-left.navmodule
+        %a{:href => "http://facebook.com/hackpoly", target: "_blank"}
+          %i.fb-link.fa.fa-facebook-square
+        %a{:href => "http://twitter.com/hackpoly", target: "_blank"}
+          %span.twitter-link.fa.fa-twitter-square
+      .col-xs-6.text-center
+        .navbar-logo
+          -#%img#hpoly-logo{:alt => "cal poly pomona hackathon logo", :src => "res/hackpoly.png"}/
+          = link_to root_path do
+            = image_tag 'hackpoly.png', alt: 'cal poly pomona hackathon logo', id: 'hpoly-logo'
+      .col-xs-3.text-right.navmodule
+        -#%button.btn.btn-primary Apply
+        - if user_signed_in?
+          .hidden-xs
+            = link_to "Application", user_application_path, class: "btn btn-primary"
+          .visible-xs
+            = link_to user_application_path, class: "btn btn-primary" do
+              %i.fa.fa-user
+        - else
+          = link_to "Apply", new_user_registration_path, class: "btn btn-primary"
+= render partial: 'layouts/flash_messages'

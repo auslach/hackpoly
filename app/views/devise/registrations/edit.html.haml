@@ -1,4 +1,5 @@
-.account-page
+= render partial: "shared/page_nav"
+.account-page.container
   .row
     .page-heading.col-sm-12.text-center
       %h2 Edit Account Info
@@ -22,25 +23,4 @@
     .row
       .col-sm-12.text-center
         .actions
-          = f.button :submit, "Update"
-  -#%h3 Cancel my account
-  -#%p
-    -#Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  -#-#= link_to "Back", :back
-    -#.field
-      -#= f.input :email, autofocus: true, label: "Email Address"
-    -#.field
-      -#= f.input :current_password, as: :password, label: "Current Password"
-    -#- if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      -#%div
-        -#Currently waiting confirmation for: #{resource.unconfirmed_email}
-    -#.field
-      -#= f.input :password, as: :password, label: "New password"
-    -#.field
-      -#= f.input :password_confirmation, as: :password, label: "Confirm Password"
-    -#.actions
-      -#= f.button :submit, "Update"
-  -#-#%h3 Cancel my account
-  -#-#%p
-    -#-#Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  -#-#= link_to "Back", :back
+          = f.button :submit, "Update", class: "btn btn-primary"

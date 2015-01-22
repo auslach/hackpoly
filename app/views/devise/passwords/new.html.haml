@@ -1,4 +1,5 @@
-.password-page
+= render partial: "shared/page_nav"
+.password-page.container
   .row
     .page-heading.col-sm-12.text-center
       %h2 Forgot Password?
@@ -9,4 +10,4 @@
     .row
       .col-sm-12.text-center
         .actions
-          = f.button :submit, "Reset Password"
+          = f.button :submit, "Reset Password", class: "btn btn-primary"

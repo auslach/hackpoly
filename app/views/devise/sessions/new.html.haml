@@ -1,4 +1,5 @@
-.login-page
+= render partial: "shared/page_nav"
+.login-page.container
   .row
     .page-heading.col-sm-12.text-center
       %h2 Login
@@ -12,7 +13,7 @@
     .row
       .col-sm-12.text-center
         .actions
-          = f.button :submit, "Login"
+          = f.button :submit, "Login", class: "btn btn-primary"
     %br/
     .row
       .col-sm-12.text-center

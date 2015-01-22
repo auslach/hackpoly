@@ -1,4 +1,6 @@
-- flash.each do |key, value|
-  .row
-    .flash-message.col-sm-12.text-center
-      %h4= value
+.flash-messages-container.container
+  %br/
+  - flash.each do |key, value|
+    .row
+      .flash-message.col-sm-12.text-center
+        %h4= value

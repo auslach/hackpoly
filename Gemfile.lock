@@ -31,8 +31,6 @@ GEM
     autoprefixer-rails (4.0.2.1)
       execjs
     bcrypt (3.1.9)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -185,7 +183,6 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bootstrap-sass
   byebug
   coffee-rails (~> 4.0.0)
   delayed_job_active_record

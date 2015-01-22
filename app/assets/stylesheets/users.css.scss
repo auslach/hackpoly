@@ -1,12 +1,10 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .page-heading {
   margin-bottom: 15px;
 }
 input[type="submit"] {
-  margin-top: 15px;
 }
 .application-page {
   .row {
@@ -48,18 +46,13 @@ input[type="submit"] {
     }
   }
   .responsive-align {
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: 768px) {
       text-align: left;
     }
-    @media (min-width: $screen-xs-max) {
+    @media (min-width: 768px) {
       text-align: right;
     }
   }
 }
 .account-page {
-}
-.stats-bro {
-  div {
-    /*border: 1px solid green;*/
-  }
 }

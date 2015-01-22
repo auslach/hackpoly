@@ -1,4 +1,5 @@
-.profile-page
+= render partial: "shared/page_nav"
+.profile-page.container
   .row
     .page-heading.col-md-12.text-center
       %h2= "#{@user.greeting}'s Profile"
@@ -57,4 +58,4 @@
         = f.input :coolest_built, label: "Describe the coolest thing you've ever built or achieved. (Does not have to be related to hackathons, software, design, etc!)", placeholder: "<Type coolness here>"
     .row
       .col-sm-12.text-center
-        = f.button :submit, "Update my profile"
+        = f.button :submit, "Update my profile", class: "btn btn-primary"

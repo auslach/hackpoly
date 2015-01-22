@@ -1,1 +1,243 @@
-this is the homepage
+.row.row-offcanvas.row-offcanvas-left.no-margin
+  / Sidebar Content
+  #sidebar.col-xs-6.visible-xs-block.sidebar-offcanvas
+    %ul.list
+      %li
+        %a{:href => "http://facebook.com/hackpoly", target: "_blank"}
+          %i.share-link.fa.fa-facebook-square
+          %span.share-text Facebook
+      %li
+        %a{:href => "http://twitter.com/hackpoly", target: "_blank"}
+          %i.share-link.fa.fa-twitter-square
+          %span.share-text Twitter
+      %li
+        %a{:href => "http://github.com/teamhackpoly", target: "_blank"}
+          %i.share-link.fa.fa-github-square
+          %span.share-text Source Code
+      %li
+        -#%button.btn.btn-primary.sidebar-button Apply
+        - if user_signed_in?
+          = link_to "Application", user_application_path, class: "btn btn-primary sidebar-button"
+        - else
+          = link_to "Apply", new_user_registration_path, class: "btn btn-primary sidebar-button"
+  / All Main Content Here
+  .col-xs-12.no-padding
+    / Header Portion
+    #top-image.image-module
+      .container
+        / Prenav
+        #prenav.row.no-margin
+          .hidden-xs.col-sm-2.text-left.navmodule
+            %a{:href => "http://facebook.com/hackpoly", target: "_blank"}
+              %i.fb-link.fa.fa-facebook-square
+            %a{:href => "http://twitter.com/hackpoly", target: "_blank"}
+              %span.twitter-link.fa.fa-twitter-square
+          .visible-xs-block.col-xs-2.text-left.navmodule
+            %button#sidebar-toggle.btn{"data-toggle" => "offcanvas"}
+              %i.fa.fa-bars
+          .col-xs-8.col-sm-8.text-center
+            .navbar-logo
+              -#%img#hpoly-logo-white{:alt => "cal poly pomona hackathon logo", :src => "res/hackpoly-white.png"}/
+              = image_tag "hackpoly-white.png", alt: "cal poly pomona hackathon logo", id: "hpoly-logo-white"
+      .hero-line
+        %h1
+          Hack the Future
+          %span.hidden-xs in SoCal
+        .action
+          / <button type="button" id="sponsor-button" class="btn btn-success btn-lg"> Sponsor </button>
+          #application-form
+          -#%button#apply-button.btn.btn-primary.btn-lg{:type => "button"} Apply
+          = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary"
+    .subtle
+      .container
+        #information.module
+          %h2.title-line
+            %span
+              %span.hidden-xs Hackpoly is Cal Poly Pomona's Annual Hackathon
+              %span.visible-xs-inline CPP's Hackathon.
+          .row.text-center
+            .col-xs-12.col-sm-6.col-md-6.col-lg-6
+              %a.font-large{:href => "http://maps.google.com/maps/api/staticmap?center=34.052142,-117.814411&zoom=13&markers=Cal+Poly+Pomona+3801+West+Temple+Avenue+Pomona,+CA+91768&path=color:0x0000FF80|weight:5|34.06061,-117.81652&size=500x300&sensor=TRUE_OR_FALSE", target: "_blank"}
+                Cal Poly Pomona
+                %br/
+                Southern California
+              %h4 WHERE
+            .col-xs-12.col-sm-6.col-md-6.col-lg-6
+              %a.font-large{:href => "https://www.google.com/calendar/event?action=TEMPLATE&tmeid=MHQzcWpjN3Y2ZDN2YTlpYWZzM2E5dGc0bXMgcWYxbHNlNXQwMjllaDdxMXQ3MWVwbWdqdDRAZw&tmsrc=qf1lse5t029eh7q1t71epmgjt4%40group.calendar.google.com", target: "_blank"}
+                Friday, Feb 20th 6 PM -
+                %br/
+                Saturday, Feb 21st 10 PM
+              %h4 WHEN
+        #faq.module
+          %h2.title-line
+            %span FAQ
+          .row.text-justify
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                What is a hackathon?
+              %p.answer
+                A hackathon is difficult to explain. It's a type of invention competition at it's core. Hackathons break down something like this: You form up in a team, your team forms an idea, your team works tirelessly for 24 hours to bring this idea to reality, your team demos whatever it got working and perhaps wins some prizes. Of course, in between the commas of the last sentence is jammed pack excitement and surprises.
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                Do I need to know how to code?
+              %p.answer
+                Knowing how to code will definitely help, but isn't a requirement. Graphic design can be a large aspect of some projects. We will be hosting a series of workshops about apps, websites, and more in the week preceding Hackpoly.
+                %a{:href => "/hackweek.html"} Check out Hack Week!
+            .clearfix.visible-sm-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                What should I bring?
+              %p.answer
+                Use your best judgement of course, but these are some things we recommend:
+              %ul
+                %li A computer to work on (even a desktop will work)
+                %li Toothbrush and Toothpaste
+                %li Extra clothes
+                %li Sleeping bag and a pillow(if you want to sleep)
+                %li Any hardware that you'll need (arduinos, raspberry pi, etc... )
+            .clearfix.visible-md-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                How long is the event?
+              %p.answer
+                The entire event (registration to judging) will run about 26 hours. A final schedule will be released closer to the event.
+            .clearfix.visible-sm-block
+            .clearfix.visible-lg-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                What kind of stuff should I build? Is there a theme?
+              %p.answer
+                Hackpoly doesn't have a theme and you can build whatever you like. At Hackpoly 2014,
+                projects ranged from
+                = succeed "," do
+                  %a{:href => "https://flic.kr/p/jycAPA", target: "_blank"} a hacked car
+                to an
+                = succeed "," do
+                  %a{:href => "https://flic.kr/p/jyHcUP", target: "_blank"} electric cello
+                to an app that helps track your pantry.
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                Do I need a team?
+              %p.answer
+                You can put together a team beforehand, or join one during the event. Many people come with an idea and try to build a team around it. Others come in with a team and a set idea.
+            .clearfix.visible-sm-block
+            .clearfix.visible-md-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                How much does it cost?
+              %p.answer
+                Hackpoly is cost free to all attendees.
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                Do I need to be a student?
+              %p.answer
+                Yes, in order to attend Hackpoly, you must have a valid .edu email address and can't have graduated more than 6 months prior.
+            .clearfix.visible-sm-block
+            .clearfix.visible-lg-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                Will there be food?
+              %p.answer
+                We will be providing meals, drinks, and snacks. Don't worry, you won't be going hungry.
+            .clearfix.visible-md-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                Do I own my project after the event?
+              %p.answer
+                Don't worry, your team will own the project. We want to see the awesome stuff you can make, but even more than that we want to see your project take off afterward.
+            .clearfix.visible-sm-block
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                How will projects be judged?
+              %p.answer
+                You will demo your project to a panel of judges, then they will make decisions based off a combination of novelty, utility, design, overall coolness, and technical complexity.
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              %p.question
+                This sounds awesome, what do I do now?
+              %p.answer
+                Look in the nav bar at the top of the page, and press the apply button! Don't be intimidated if this is your first hackathon, we want to see you here.
+            .clearfix.visible-sm-block
+            .clearfix.visible-md-block
+            .clearfix.visible-lg-block
+        / End of FAQ Section
+        #sponsors.module
+          %h2.title-line
+            %span Sponsors
+          -#.block.platinum
+          -#.block.gold
+          -#.block.silver
+            -#%a{:href => "http://mlh.io"}
+              -#%img#mlh.grayscale{:alt => "Major League Hacking sponsors Hackpoly 2015", :src => "res/sponsors/mlh.png", :title => "Hackpoly part of the MLH.io Spring 2015 lineup"}/
+            -#%a{:href => "http://generalassemb.ly"}
+              -#%img#generalassembly.grayscale{:alt => "Hackpoly sponsored by General Assembly", :src => "res/sponsors/ga.png", :title => "Hackpoly sponsored by General Assembly"}/
+          -#.block.bronze
+            -#%a{:href => "http://food2fork.com"}
+              -#%img#food2fork.grayscale{:alt => "Food2Fork sponsors Hackpoly", :src => "res/sponsors/food2fork.png", :title => "Food2Fork sponsors Hackpoly"}/
+            -#%a{:href => "http://jetbrains.com"}
+              -#%img#jetbrains.grayscale{:alt => "Jetbrains Sponsors Hackpoly", :src => "res/sponsors/jetbrains.png", :title => "Jetbrains Sponsors Hackpoly"}/
+
+          .block.platinum
+          .block.gold
+          .block.silver
+            = link_to "http://mlh.io", target: "_blank" do
+              = image_tag "sponsors/mlh.png", alt: "Major League Hacking sponsors Hackpoly 2015", id: "mlh", class: "grayscale", title: "Hackpoly part of the MLH.io Spring 2015 Lineup"
+            = link_to "http://generalassemb.ly", target: "_blank" do
+              = image_tag "sponsors/ga.png", alt: "Hackpoly sponsored by General Assembly", id: "generalassembly", class: "grayscale", title: "Hackpoly sponsored by General Assembly"
+            .block.bronze
+            = link_to "http://food2fork.com", target: "_blank" do
+              = image_tag "sponsors/food2fork.png", alt: "Food2Fork sponsors Hackpoly 2015", id: "food2fork", class: "grayscale", title: "Food2Fork Sponsors Hackpoly"
+            = link_to "http://jetbrains.com", target: "_blank" do
+              = image_tag "sponsors/jetbrains.png", alt: "Jetbrains sponsors Hackpoly 2015", id: "jetbrains", class: "grayscale", title: "Jetbrains Sponsors Hackpoly"
+    = render partial: "layouts/footer"
+  / Internal Behavior
+  :javascript
+    $(document).ready(function(){
+      //When scrolling past the header text, bring in navbar
+      var $button = $("#apply-button").first();
+      var $nav = $(".navbar").first();
+      var $prenav = $("#prenav").first();
+
+      //For animating the navbar
+      var oldHeight = $nav.height();
+      var navVis = false;
+
+      $(window).scroll(function(){
+        if($(document).scrollTop() > ($button.position().top)){
+          if(!navVis){
+
+           navVis = true;
+           $nav.addClass('notransition');
+           $nav.css('height',"20px");
+           console.log($nav.css('height'));
+           $nav.removeClass('notransition');
+
+           $nav.css('display','block');
+           $nav.css('height',oldHeight);
+           $nav.css('opacity',1);
+
+          }
+        }
+
+        if($(document).scrollTop() <= 5 && navVis){
+          $nav.css('height',"0px");
+          $nav.css('opacity',0);
+
+          //Timeout synced with css animation
+          setTimeout(function(){
+            if(navVis){
+              $nav.addClass('notransition');
+              $nav.css('display','none');
+              $nav.css('height',oldHeight);
+              $nav.removeClass('notransition');
+
+              navVis = false;
+            }
+          }, 500);
+        }
+      });
+
+      //Mobile Menu Button Behavior
+      $('[data-toggle="offcanvas"]').click(function(){
+          $('.row-offcanvas').toggleClass('active');
+      });
+    });

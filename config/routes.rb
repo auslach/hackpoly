@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       sign_in: 'login',
       sign_out: 'logout',
       sign_up: 'apply',
-      edit: 'account',
+      edit: 'settings',
       password: 'forgot'
     }
 
