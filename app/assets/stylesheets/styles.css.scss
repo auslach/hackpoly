@@ -116,7 +116,7 @@ body{
 	background-size: cover;
 }
 
-.navbuttons{
+.navbuttons {
 	float:right;
 }
 
@@ -131,7 +131,6 @@ body{
 	height:auto;
 	top:0;
 	left:0;
-
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color:white;
@@ -160,7 +159,6 @@ body{
 .animated-nav{
 	display:none;
 	opacity: 0;
-
 	-webkit-transition: height 0.5s, opacity 0.5s, top 0.8s ease-out;
 	transition: height 0.5s, opacity 0.5s, top 0.8s ease-out;
 }
@@ -176,7 +174,6 @@ body{
 #information{
 	display: block;
 	width:100%;
-
 	height:5 00px;
 	padding-top:20px;
 }
@@ -219,15 +216,15 @@ body{
   font-weight: 600;
 }
 
-#pf-logo{
+#pf-logo {
 	height:40px;
 }
 
-.module{
+.module {
 	margin-bottom: 75px;
 }
 
-.subtle{
+.subtle {
 	background-image: image-url("grey_@2X.png");
 	background-repeat: repeat;
 	height:100%;
@@ -248,43 +245,43 @@ body{
 	padding: 0px !important;
 }
 
-.title-line { 
-	width:100%; 
-	text-align:center; 
-	border-bottom: 1px solid #000; 
-	line-height:0.1em; 
-	margin:50px 0 50px; 
-} 
-
-.title-line span { 
-	background-image: image-url("grey_@2X.png");
-	background-repeat: repeat; 
-	background-position:center center;
-	padding:0 10px; 
+.title-line {
+	width:100%;
+	text-align:center;
+	border-bottom: 1px solid #000;
+	line-height:0.1em;
+	margin:50px 0 50px;
 }
 
-.left-title-line { 
-	width:100%; 
-	text-align:left; 
-	border-bottom: 1px solid #000; 
-	line-height:0.1em; 
-	margin:50px 0 50px; 
-} 
-
-.left-title-line span { 
+.title-line span {
 	background-image: image-url("grey_@2X.png");
-	background-repeat: repeat; 
+	background-repeat: repeat;
 	background-position:center center;
-	padding:0 10px; 
+	padding:0 10px;
 }
 
-.left-title-line .white { 
+.left-title-line {
+	width:100%;
+	text-align:left;
+	border-bottom: 1px solid #000;
+	line-height:0.1em;
+	margin:50px 0 50px;
+}
+
+.left-title-line span {
+	background-image: image-url("grey_@2X.png");
+	background-repeat: repeat;
+	background-position: center center;
+	padding:0 10px;
+}
+
+.left-title-line .white {
 	background: white !important;
 }
 
 .page {
-	background:white !important;
-	color:black;
+	background: white !important;
+	color: black;
 	margin-top: 30px;
 	margin-bottom: 30px;
 
