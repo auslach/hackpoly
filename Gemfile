@@ -15,6 +15,8 @@ gem 'devise-async'
 gem 'simple_form'
 gem 'delayed_job_active_record'
 
+gem 'newrelic_rpm'
+
 gem 'byebug'
 
 gem 'mailchimp-api', require: 'mailchimp'
