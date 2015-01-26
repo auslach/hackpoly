@@ -1,26 +1,9 @@
-
-.row.row-offcanvas.row-offcanvas-left.no-margin
-  / Sidebar Content
-  #sidebar.col-xs-6.visible-xs-block.sidebar-offcanvas
-    %ul.list
-      %li
-        %a{:href => "http://facebook.com/hackpoly"}
-          %i.share-link.fa.fa-facebook-square
-          %span.share-text Facebook
-      %li
-        %a{:href => "http://twitter.com/hackpoly"}
-          %i.share-link.fa.fa-twitter-square
-          %span.share-text Twitter
-      %li
-        %a{:href => "http://github.com/teamhackpoly"}
-          %i.share-link.fa.fa-github-square
-          %span.share-text Source Code
-      %li
-        %button.btn.btn-primary.sidebar-button Apply
-  / All Main Content Here
+/ All Main Content Here
+= render partial: 'shared/page_nav'
+.hackweek-page.container
   .col-xs-12.no-padding.no-margin
-    #header
-      .hero-line
+    #header.row
+      .hero-line.col-xs-12
         %p.pre-hero Hackpoly Presents
         %h1 Hack Week
         %p.post-hero Prepare for Hackpoly 2015 by learning from the pros.
@@ -31,53 +14,25 @@
         %p.location Cal Poly Pomona
         %p.description Come learn the basics of making Android apps. Bring your laptop and run your first app in 2 hours.
         %br/
-        %a.btn.btn-default{:href => "https://hackweekandroid.eventbrite.com"} Register Now
+        %a.btn.btn-default{:href => "https://hackweekandroid.eventbrite.com", target: "_blank"} Register Now
       #git.hack-session.col-xs-12.col-sm-6
         %h2 Git
         %p.date February 17th 6PM - 8PM
         %p.location Cal Poly Pomona
         %p.description Version Control (such as Git) can offer powerful capabilities to teams of software developers. However, without enough experience, things can quickly go awry. Learn how to take full advantage of Git.
         %br/
-        %a.btn.btn-default{:href => "https://hackweekgit.eventbrite.com"} Register Now
+        %a.btn.btn-default{:href => "https://hackweekgit.eventbrite.com", target: "_blank"} Register Now
       #web.hack-session.col-xs-12.col-sm-6
         %h2 Web Backend
         %p.date February 18th 6PM - 8PM
         %p.location Cal Poly Pomona
         %p.description Most websites are more than just simple HTML. Come learn to build a powerful backend running on a server and using a database.
         %br/
-        %a.btn.btn-default{:href => "http://hackweekwebbackend.eventbrite.com"} Register Now
+        %a.btn.btn-default{:href => "http://hackweekwebbackend.eventbrite.com", target: "_blank"} Register Now
       #design.hack-session.col-xs-12.col-sm-6
         %h2 UI/UX & Design
         %p.date February 19th 6PM
         %p.location Cal Poly Pomona
         %p.description Come learn the basics of creating a great user experience through design.
         %br/
-        %a.btn.btn-default{:href => "http://hackweekdesign.eventbrite.com"} Register Now
-    .footer
-      .container
-        .row
-          .col-xs-12.col-sm-6.text-left
-            %p
-              %a{:href => "http://github.com/TeamHackpoly/"}
-                Site
-              by
-              %a{:href => "http://twitter.com/BryanTbury"} Bryan Thornbury
-              and
-              %a{:href => "http://twitter.com/austinlchang"} Austin Chang
-          .col-xs-12.col-sm-6.text-right
-            %small Organized By
-            %br/
-            %a{:href => "http://polyfounders.com"}
-              %img#pf-logo{:alt => "Hackpoly Hosted by Poly Founders", :src => "res/clubs/poly_founders.png"}/
-
-/ Internal Behavior
-:javascript
-$(document).ready(function(){
-  
-
-  //Mobile Menu Button Behavior
-  $('[data-toggle="offcanvas"]').click(function(){
-      $('.row-offcanvas').toggleClass('active');
-  });
-
-});
+        %a.btn.btn-default{:href => "http://hackweekdesign.eventbrite.com", target: "_blank"} Register Now
