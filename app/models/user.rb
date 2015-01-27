@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   def mailchimp_subscribe
     # subscribe them to the new "registered" Hackpoly 2015 mailchimp list
     list_id = ENV['MAILCHIMP_LIST_ID']
-    MAILCHIMP.lists.delay.subscribe(list_id,
+    MAILCHIMP.lists.subscribe(list_id,
                               { email: self.email },
                               { 'FNAME' => '', 'LNAME' => '' },
                               'html', false)
