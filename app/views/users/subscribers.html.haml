@@ -1,0 +1,17 @@
+%h1{class: "text-center"}
+  = "Count: #{@emails.count}"
+%table.table.table-striped.table-bordered
+  %th
+    Email
+  %th
+    List
+  %th
+    Status
+  - @emails.each do |e|
+    %tr
+      %td
+        = link_to e['merges']['EMAIL'], user_path(User.find_by_email(e['merges']['EMAIL']).id)
+      %td
+        = e['list_name']
+      %td
+        = e['status']

@@ -50,6 +50,8 @@
     .app-container
       .container-bg.subtle
         .container-fluid
+          - if !current_page?(root_path)
+            = render partial: 'shared/page_nav'
           = yield
           - if !current_page?(root_path)
             %br/

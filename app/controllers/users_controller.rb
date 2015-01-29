@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :authorize_admin, only: [:index]
+  before_action :authorize_admin, only: [:index, :subscribers, :show]
 
   def application
     @user = current_user
@@ -26,7 +26,15 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all.order("created_at DESC")
+  end
+
+  def subscribers
     @emails = MAILCHIMP.lists.members(ENV['MAILCHIMP_LIST_ID'])['data']
+  end
+
+  def show
+    @user = User.find(params[:id]).user_info
   end
 
 private

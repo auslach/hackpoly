@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   get 'profile' => 'users#profile', as: :user_profile
   put 'profile' => 'users#update', as: :update_user_profile
 
-  get 'users' => 'users#index', as: :users
+  #get 'users' => 'users#index', as: :users
+  get 'subscribers' => 'users#subscribers', as: :user_subscribers
+  resources :users, only: [:index, :show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

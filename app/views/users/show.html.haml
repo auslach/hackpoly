@@ -1,0 +1,67 @@
+.container
+  %h3{class: "text-center"}
+    = link_to 'Back to user list', users_path
+    %br
+  .row
+    .col-sm-12.col-md-6.col-md-offset-3
+      %table.table.table-striped.table-bordered
+        %tr
+          %td.text-right
+            Id
+          %td
+            = @user.user.id
+        %tr
+          %td.text-right
+            Last Name
+          %td
+            = @user.last_name
+        %tr
+          %td.text-right
+            First Name
+          %td
+            = @user.first_name
+        %tr
+          %td.text-right
+            University/ School
+          %td
+            = @user.user.university
+        %tr
+          %td.text-right
+            Major
+          %td
+            = @user.user.major
+        %tr
+          %td.text-right
+            Grade Level
+          %td
+            = @user.year_in_school
+        %tr
+          %td.text-right
+            Is a
+          %td
+            = @user.skillset
+        %tr
+          %td.text-right
+            Portfolio
+          %td
+            = @user.website_url
+        %tr
+          %td.text-right
+            Github
+          %td
+            = @user.github_url
+        %tr
+          %td.text-right
+            LinkedIn
+          %td
+            = @user.linkedin_url
+        %tr
+          %td.text-right
+            Previous hackathons:
+          %td
+            = @user.previous_hackathons
+        %tr
+          %td.text-right
+            Coolest Thing Built
+          %td
+            = @user.coolest_built

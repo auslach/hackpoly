@@ -1,16 +1,31 @@
-= render partial: 'shared/page_nav'
+%h1{class: "text-center"}
+  = "Count: #{@users.count}"
 %table.table.table-striped.table-bordered
+  %th
+    Id
+  %th
+    Name
   %th
     Email
   %th
-    List
+    School
   %th
-    Status
-  - @emails.each do |e|
-    %tr
-      %td
-        = e['merges']['EMAIL']
-      %td
-        = e['list_name']
-      %td
-        = e['status']
+    Major
+  %th
+    Joined
+  - @users.each do |user|
+    - unless user.user_info.nil?
+      %tr
+        %td
+          = user.id
+        %td
+          = "#{user.user_info.first_name} #{user.user_info.last_name}"
+        %td
+          = link_to user_path(user.id) do
+            = user.email
+        %td
+          = user.university
+        %td
+          = user.major
+        %td
+          = user.created_at.strftime("%b %e, %l:%M %p")
