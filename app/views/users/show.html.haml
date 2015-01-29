@@ -22,6 +22,11 @@
             = @user.first_name
         %tr
           %td.text-right
+            Email Address
+          %td
+            = @user.user.email
+        %tr
+          %td.text-right
             University/ School
           %td
             = @user.user.university
