@@ -28,4 +28,4 @@
         %td
           = user.major
         %td
-          = user.created_at.strftime("%b %e, %l:%M %p")
+          = user.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %e, %l:%M %p")
