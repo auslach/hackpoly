@@ -14,9 +14,16 @@
       .col-sm-6.col-sm-offset-3
         = f.input :password_confirmation, as: :password, label: "Confirm Password"
     .row
+      .col-sm-8.col-sm-offset-2.text-center
+        %p
+          By applying, I hereby agree to the terms and conditions stated in Hackpoly 2015's
+          = succeed "." do
+            = link_to "code of conduct", "http://confcodeofconduct.com/", target: "_blank"
+    %br/
+    .row
       .col-sm-12.text-center
         = f.button :submit, "Apply", class: "btn btn-primary"
     %br/
     .row
       .col-sm-12.text-center
-        %h4= link_to "Already have an account?", new_user_session_path
+        %h4= link_to "Already have an account? Log in here!", new_user_session_path

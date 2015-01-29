@@ -311,9 +311,9 @@ body{
 }
 
 .hero-line .action a {
-	width:200px;
-  padding: 15px;
-  font-size: 150%;
+	width: 150px;
+  padding: 10px;
+  font-size: 120%;
 }
 
 .hero-line {
@@ -357,8 +357,8 @@ body{
 
 }
 
-#sponsors img{
-
+#sponsors img {
+  margin: 15px 0 15px 0;
 }
 
 img.grayscale {
@@ -374,6 +374,13 @@ img.grayscale:hover {
   filter: none;
   -webkit-filter: grayscale(0%);
   opacity: 1;
+}
+#sponsors #namecheap {
+  width: 120px;
+}
+
+.home-button {
+  margin: 0 5px 5px 5px;
 }
 
 /*

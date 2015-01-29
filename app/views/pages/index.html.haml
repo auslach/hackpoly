@@ -43,7 +43,8 @@
           %span.hidden-xs in SoCal
         .action
           #application-form
-          = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary"
+          = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary home-button"
+          = link_to "Sponsor", "https://www.dropbox.com/s/x8sw7k43xptk0as/HackPoly2015Sponsor.pdf?dl=0", id: "sponsor-button", class: "btn btn-primary home-button", target: "_blank"
     .subtle
       .container
         #information.module
@@ -151,7 +152,9 @@
               %p.question
                 This sounds awesome, what do I do now?
               %p.answer
-                Look in the nav bar at the top of the page, and press the apply button! Don't be intimidated if this is your first hackathon, we want to see you here.
+                Look in the nav bar at the top of the page, and press the apply button! Don't be intimidated if this is your first hackathon, we want to see you here. Be sure to take a look at our
+                = succeed "!" do
+                  = link_to "code of conduct", "http://confcodeofconduct.com/", target: "_blank"
             .clearfix.visible-sm-block
             .clearfix.visible-md-block
             .clearfix.visible-lg-block
@@ -171,6 +174,8 @@
               = image_tag "sponsors/food2fork.png", alt: "Food2Fork sponsors Hackpoly 2015", id: "food2fork", class: "grayscale", title: "Food2Fork Sponsors Hackpoly"
             = link_to "http://jetbrains.com", target: "_blank" do
               = image_tag "sponsors/jetbrains.png", alt: "Jetbrains sponsors Hackpoly 2015", id: "jetbrains", class: "grayscale", title: "Jetbrains Sponsors Hackpoly"
+            = link_to "https://www.namecheap.com", target: "_blank" do
+              = image_tag "sponsors/namecheap.png", alt: "Namecheap sponsors Hackpoly 2015", id: "namecheap", class: "grayscale", title: "Namecheap Sponsors Hackpoly 2015"
     = render partial: "layouts/footer"
   / Internal Behavior
   :javascript
