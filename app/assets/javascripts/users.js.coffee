@@ -1,3 +1,6 @@
+$(document).ready ->
+  $('[data-toggle="tooltip"]').tooltip()
+
 $(document).on "ready page:load", ->
   $('select[rel="autocomplete"]').each ->
         option = []
