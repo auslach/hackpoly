@@ -45,7 +45,6 @@
           #application-form
           = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary home-button"
           = link_to "Sponsor", "https://www.dropbox.com/s/x8sw7k43xptk0as/HackPoly2015Sponsor.pdf?dl=0", id: "sponsor-button", class: "btn btn-primary home-button", target: "_blank"
-          = link_to "Volunteer", "http://volunteer.hackpoly.com", id: "volunteer-button", class: "btn btn-primary home-button", target: "_blank"
     .subtle
       .container
         #information.module
