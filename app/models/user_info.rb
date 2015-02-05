@@ -11,7 +11,7 @@ class UserInfo < ActiveRecord::Base
   validates :coolest_built,       length: { maximum: 300 }
   validates :previous_hackathons, length: { maximum: 300 }
   validates :university,          length: { maximum: 100 }
-  validates :year_in_school,      length: { maximum: 10 }
+  validates :year_in_school,      length: { maximum: 20 }
   validates :skillset,            length: { maximum: 20 }
 
   # user stats
