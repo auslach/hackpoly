@@ -2,4 +2,4 @@
 
 Source code for the beautiful hackpoly website
 
-[hackpoly.com](www.hackpoly.com)
+[hackpoly.com](http://www.hackpoly.com)
