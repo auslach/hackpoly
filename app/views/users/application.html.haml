@@ -15,7 +15,7 @@
         %ul.list-unstyled
           .hidden-xs.s10
           %li.text-uppercase
-            = link_to 'all users', users_path, class: "btn btn-primary btn-block"
+            = link_to "all users (#{User.count(:all)})", users_path, class: "btn btn-primary btn-block"
           .hidden-xs.s10
           %li.text-uppercase
             = link_to 'all mailchimp subscribers', user_subscribers_path, class: "btn btn-primary btn-block"
