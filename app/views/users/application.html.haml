@@ -6,7 +6,7 @@
     .app-status.col-md-12.text-center
       %h4
         - if current_user.admitted?
-          = "Congratulations! Your application has been <span class='user-status'>#{current_user.status}</span> for Hackpoly 2015. Please check your email regularly for further instructions.".upcase
+          = "Congratulations! Your application has been <span class='user-status'>#{current_user.status}</span> for Hackpoly 2015. Please check your email regularly for further instructions.".html_safe
         - else
           = "Your application is currently <span class='user-status'>#{current_user.status}</span>. Please check back regularly for any updates to your application status.".html_safe
   .row
