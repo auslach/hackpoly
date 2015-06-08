@@ -79,11 +79,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-##     url: <%= ENV['DATABASE_URL'] %>
-##
-#production:
-  #<<: *default
-  #database: hackpoly_production
-  #username: hackpoly
-  #password: <%= ENV['HACKPOLY_DATABASE_PASSWORD'] %>
+   #production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+production:
+  <<: *default
+  database: hackpoly
+  username: hackpoly
+  password: <%= ENV['HACKPOLY_DATABASE_PASSWORD'] %>
