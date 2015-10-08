@@ -43,8 +43,13 @@
           %span.hidden-xs in SoCal
         .action
           #application-form
-          = link_to "Apply", user_signed_in? ? user_application_path : new_user_registration_path, id: "apply-button", class: "btn btn-primary home-button"
-          = link_to "Sponsor", "https://www.dropbox.com/s/x8sw7k43xptk0as/HackPoly2015Sponsor.pdf?dl=0", id: "sponsor-button", class: "btn btn-primary home-button", target: "_blank"
+            .row
+              .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.text-center
+                %h4{style: 'color: white;line-height:30px;'} More information for Hackpoly 2016 will be available soon. Subscribe to our mailing list for the latest updates!
+                %br
+                %br
+            = link_to "Subscribe", "http://eepurl.com/bBRsFn", id: "apply-button", class: "btn btn-primary home-button", target: "_blank"
+            = link_to "Sponsor", "mailto:info@polyfounders.com?subject=Hackpoly 2016 Sponsorship", id: "sponsor-button", class: "btn btn-primary home-button"
     .subtle
       .container
         #information.module
@@ -54,17 +59,17 @@
               %span.visible-xs-inline CPP's Hackathon.
           .row.text-center
             .col-xs-12.col-sm-6.col-md-6.col-lg-6
+              %h4 WHERE
               %a.font-large{:href => "https://www.google.com/maps/dir//Cal+Poly+Pomona,+3801+West+Temple+Avenue,+Pomona,+CA+91768,+United+States/@34.056917,-117.821749,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c32ea5e3dc4361:0x904ae4ed22c91eeb!2m2!1d-117.821749!2d34.056917", target: "_blank"}
                 Cal Poly Pomona
                 %br/
                 Southern California
-              %h4 WHERE
             .col-xs-12.col-sm-6.col-md-6.col-lg-6
-              %a.font-large{:href => "https://www.google.com/calendar/event?action=TEMPLATE&tmeid=MHQzcWpjN3Y2ZDN2YTlpYWZzM2E5dGc0bXMgcWYxbHNlNXQwMjllaDdxMXQ3MWVwbWdqdDRAZw&tmsrc=qf1lse5t029eh7q1t71epmgjt4%40group.calendar.google.com", target: "_blank"}
-                Friday, Feb 20th 6 PM -
-                %br/
-                Saturday, Feb 21st 10 PM
               %h4 WHEN
+              %a.font-large
+                Friday, Feb 6
+                %br
+                Saturday, Feb 7
         #faq.module
           %h2.title-line
             %span FAQ
@@ -161,7 +166,7 @@
         / End of FAQ Section
         #sponsors.module
           %h2.title-line
-            %span Sponsors
+            %span Last Year's Sponsors
           .block.platinum
           .block.gold
           .block.silver
