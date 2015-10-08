@@ -21,7 +21,7 @@ module Hackpoly
     # config.i18n.default_locale = :de
 
     config.before_configuration do
-      secrets = File.join(Rails.root, 'config', 'secrets.yml')
+      secrets = File.join(Rails.root, 'config', 'secrets_dev.yml')
       YAML.load_file(secrets).each do |key, value|
         if Rails.env == key
           # traverse and assign env vars
